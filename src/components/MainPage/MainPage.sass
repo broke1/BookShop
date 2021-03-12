@@ -1,0 +1,46 @@
+@import "../../sass/color"
+
+.main-container 
+  background: $lightgrey
+  height: 100vh
+  display: flex
+  flex-flow: row
+  justify-content: center
+
+  .container
+    width: 1140px
+    display: flex
+    flex-flow: column nowrap
+    justify-content: flex-start
+    align-items: center
+
+    .title-page
+      font-size: 50px
+      line-height: 55px
+      color: rgba(0,0,0,0.3)
+      position: relative
+      font-weight: bold
+      margin: 20px 0 50px 0
+
+      &::after
+        content: ''
+        position: absolute
+        bottom: -10px
+        width: 80%
+        left: 50%
+        transform: translateX(-50%)
+        height: 3px
+        background: rgba(0,0,0,0.3)
+
+    .themes-block
+      width: 1000px
+      overflow: auto
+      height: 85vh
+  
+
+        
+
+    
+
+    
+

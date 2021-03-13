@@ -1,0 +1,48 @@
+@import "../../sass/color"
+
+.book-block
+  width: 25%
+  margin: 40px 20px 0px 20px
+  height: 350px
+  display: flex
+  flex-flow: column nowrap
+  justify-content: center
+  align-items: center
+  position: relative
+
+  &::before
+    content: ''
+    position: absolute
+    bottom: -10px
+    height: 2px
+    background: $blue
+    width: 100%
+    left: 50%
+    transform: translateX(-50%)
+
+  &::after
+    content: ''
+    position: absolute
+    right: -10px
+    height: 100%
+    background: $blue
+    width: 2px
+    top: 50%
+    transform: translateY(-50%)  
+
+  .book-author
+    font-size: 20px
+    color: $black
+    margin-bottom: 20px
+
+  .book-name
+    font-size: 25px
+    color: $black
+    font-style: italic
+    text-align: center
+
+  .book-date
+    font-size: 14px
+    color: $black
+    position: absolute
+    bottom: 10px

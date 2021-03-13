@@ -1,4 +1,4 @@
-[
+{"books":[
   {
     "genre_id" : 0,
     "genre_name": "Фантастика",
@@ -56,6 +56,14 @@
         "author_last_name": "Дик",
         "author_first_name": "Филип",
         "author_mid_name": "Кинред"
+      },
+      {
+        "id": 3,
+        "title": "Мечтают ли Андроиды об электроовцах",
+        "date_add": "2021-12-03 15:33:12",
+        "author_last_name": "Дик",
+        "author_first_name": "Филип",
+        "author_mid_name": "Кинред"
       }
     ]
   },
@@ -90,3 +98,4 @@
     ]
   }
 ]
+}

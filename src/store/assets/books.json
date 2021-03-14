@@ -64,6 +64,22 @@
         "author_last_name": "Дик",
         "author_first_name": "Филип",
         "author_mid_name": "Кинред"
+      },
+      {
+        "id": 4,
+        "title": "Марсианин",
+        "date_add": "2021-03-05 15:33:12",
+        "author_last_name": "Вейр",
+        "author_first_name": "Энди",
+        "author_mid_name": ""
+      },
+      {
+        "id": 5,
+        "title": "Игра Эндера",
+        "date_add": "2021-03-07 15:33:12",
+        "author_last_name": "Скотт",
+        "author_first_name": "Кард",
+        "author_mid_name": "Орсон"
       }
     ]
   },

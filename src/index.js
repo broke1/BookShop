@@ -14,6 +14,8 @@ Vue.component('theme-block', require('./components/themeBlock/themeBlock.vue').d
 
 Vue.component('book-block', require('./components/bookBlock/bookBlock.vue').default)  // Блок с книгой
 
+Vue.component('modal-add-book', require('./components/ModalAddBook/ModalAddBook.vue').default)  // Блок с модальным окном добавления книги
+
 import "./sass/main.sass"
 
 

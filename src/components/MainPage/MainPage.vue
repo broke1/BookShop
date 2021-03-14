@@ -13,7 +13,20 @@
           :key="`${i}-${item.genre_id}`"
           :index="i"
         />
+        <div 
+          class="add-btn"
+          @click="showModal=true"
+        >
+          <div class="btn-text">
+            Добавить книгу
+          </div>
+          <div class="btn-img" />
+        </div>
       </div>
+      <modal-add-book 
+        :showModal="showModal" 
+        @cancelModal="showModal=false"
+      />
     </div>
   </section>
 </template>
@@ -26,12 +39,12 @@ export default {
   //components: { ThemeBlock },
   data () {
     return {
-      themes: []
+      themes: [],
+      showModal: true
     }
   },
   computed: {
     checkThemes: function () {
-      
       this.themes = this.$store.getters.getThemes
       return true
     }

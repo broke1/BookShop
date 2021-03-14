@@ -37,7 +37,35 @@
       overflow-Y: auto
       overflow-X: hidden
       height: 85vh
-  
+      position: relative
+
+      .add-btn
+        display: flex
+        flex-flow: row nowrap
+        justify-content: center
+        align-items: center
+        width: auto
+        position: sticky
+        bottom: 0
+        left: 0
+        padding: 20px
+        background: $blue
+        color: $white
+        cursor: pointer
+        border-radius: 5px
+        
+        .btn-text
+          font-size: 20px
+          line-height: 20px
+
+        .btn-img
+          width: 20px
+          height: 20px
+          margin-left: 20px
+          background: url("./assets/plus.svg") no-repeat
+          background-size: contain
+          position: relative
+          top: 2px
 
         
 

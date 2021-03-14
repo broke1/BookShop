@@ -65,5 +65,63 @@ export default {
       }
 
     },
+    addBook: (state) => {
+
+      const buetifulDate = (date) => {
+        let newDate = date
+        if (Number(date) < 10) {
+          newDate = `0${date}`
+        } 
+        return newDate
+      }
+
+      return async (formdata) => {
+        let response = await api.addBook(formdata)
+        if(response.status == "success") {
+          return 'success'
+        } else {
+          let chance = Math.floor(Math.random() * Math.floor(2)) // это ввел, чтобы сымитировать непостоянство сервера, 
+                                                                  // что один раз может пройти запрос, а потом какие-то проблемы и запрос не прошел
+          if (chance == 0) {
+            return 'fail'
+          } else {
+            let exist = 0
+            let ind = 0
+            state.books.forEach( (genre,index) => {
+              if (genre.genre_id == formdata.get('genre_id')) {
+                
+                genre.items.forEach( book => {
+                  if (book.title == formdata.get('title')) {
+                    exist = 1
+                  }
+                })
+                ind = index
+              }
+            })
+            if (exist == 0) {
+              let date = new Date()
+              let newBook = {
+                id: state.books[ind].items.length,
+                title: formdata.get('title'),
+                date_add:  `${date.getFullYear()}-${buetifulDate(date.getMonth()+1)}-${buetifulDate(date.getDate())} ${buetifulDate(date.getHours())}:${buetifulDate(date.getMinutes())}:${buetifulDate(date.getSeconds())}`,
+                author_last_name: formdata.get('author_last_name'),
+                author_first_name: formdata.get('author_first_name'),
+                author_mid_name: formdata.get('author_mid_name'),
+              }
+              state.books[ind].items.push(newBook)
+              return 'success'
+            } else {
+              return 'exist'
+            }
+
+            
+            
+          } 
+          
+        }
+        
+      }
+
+    },
   }
 }

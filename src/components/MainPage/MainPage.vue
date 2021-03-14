@@ -40,7 +40,7 @@ export default {
   data () {
     return {
       themes: [],
-      showModal: true
+      showModal: false
     }
   },
   computed: {

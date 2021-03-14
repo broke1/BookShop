@@ -50,20 +50,30 @@ export default {
       }
 
       return async () => {
-        let booksState = []
-        let response = await api.getBooks()
-        if(response.status == "success") {
-          if (checkStructure(response.data)) {
-            booksState = response.data.books
-          }
-        } else {
-          if (checkStructure(books)) {
-            booksState = books.books
-          }
-        }
-        Vue.set(state, 'books', booksState)
-      }
 
+        let  timeOut = setTimeout( async function tick() {
+
+          let booksState = []
+          let response = await api.getBooks()
+          if(response.status == "success") {
+            if (checkStructure(response.data)) {
+              booksState = response.data.books
+            }
+          } else {
+            if (checkStructure(books)) {
+              booksState = JSON.parse(JSON.stringify(books.books))
+            }
+          }
+
+          Vue.set(state, 'books', booksState)
+          
+          timeOut = setTimeout(tick, 900000); 
+          
+          //i++;
+        }, 0);
+
+      }
+    
     },
     addBook: (state) => {
 
